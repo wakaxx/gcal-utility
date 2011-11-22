@@ -26,6 +26,7 @@
   .name { font-weight: bold; }
 </style>
 
+<!--
 <div id="contents">
   <div id="form">
     <form onsubmit="onEmailChanged(event);">
@@ -34,6 +35,7 @@
   </div>
   <div id="events"></div>
 </div>
+-->
 
 <script type="text/javascript">
 var prefs     = new gadgets.Prefs();
@@ -53,16 +55,29 @@ function onEmailChanged(event) {
 }
 
 function renderEvent(event) {
-  var text = [], date = event.startTime;
-  text += date.month + '/' + date.date;
+  var text = [], startDate = event.startTime, endDate = event.endTime;
+  // text += date.month + '/' + date.date;
   if(!event.allDay)
-    text += ' ' + date.hour + ':' + date.minute;
+    text += ' ' + startDate.hour + ':' + startDate.minute + '-' + endDate.hour + ':' + endDate.minute;
   text += ' ' + event.title;
   return '<div class="event">' + gadgets.util.escapeString(text) + '</div>';
 }
 
 function renderFriend(data) {
   var name   = data.name || data.email;
+  var events = data.events;
+  var html   = [];
+  html.push('<div class="section">');
+  html.push('<div class="name">' + gadgets.util.escapeString(name) + '</div>');
+  for(var i = 0 ; i < events.length ; ++i) {
+    html.push(renderEvent(events[i]));
+  }
+  html.push('</div>');
+  return html.join("\n");
+}
+
+function renderViewer(data) {
+  var name   = data.name;
   var events = data.events;
   var html   = [];
   html.push('<div class="section">');
