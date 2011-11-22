@@ -108,7 +108,9 @@ function setTime(date, hour, minute, second) {
 
 function onDatesChanged(dates) {
 //  var ids   = calendars.replace(/\s/g, '').split(',');
-  var ids   = "@viewer";
+//  var ids   = "@viewer";
+  var ids   = "selected";
+
   startTime = setTime(dates.startTime,  0,  0,  0);
   endTime   = setTime(dates.endTime,   23, 59, 59);
   if(ids.length > 0 && ids[0]) {
