@@ -33,7 +33,7 @@
 	</form>
   </div>
   <div id="events"></div>
-  <button onclick="onGetButton(event);">取得</button>
+  <button onclick="onGetButton();">取得</button>
 </div>
 
 <script type="text/javascript">
@@ -42,7 +42,7 @@ var startTime = google.calendar.utils.getNow();
 var endTime   = google.calendar.utils.getNow();
 var calendars = '';
 
-function onGetButton(event) {
+function onGetButton() {
 //  event = event || window.event;
 //  event.stopPropagation && event.stopPropagation();
 //  event.preventDefault  && event.preventDefault();
