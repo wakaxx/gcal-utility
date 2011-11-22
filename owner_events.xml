@@ -34,13 +34,24 @@
   </div>
   <div id="events"></div>
 </div>
-<button onclick="onEmailChanged(event);">取得</button>
+<button onclick="onGetButton(event);">取得</button>
 
 <script type="text/javascript">
 var prefs     = new gadgets.Prefs();
 var startTime = google.calendar.utils.getNow();
 var endTime   = google.calendar.utils.getNow();
 var calendars = '';
+
+function onGetButton(event) {
+  event = event || window.event;
+  event.stopPropagation && event.stopPropagation();
+  event.preventDefault  && event.preventDefault();
+  event.cancelBubble = true;
+  event.returnValue  = false;
+  calendars = "@viewer";
+  onDatesChanged({startTime: startTime, endTime: endTime});
+  prefs.set('calendars', calendars);
+}
 
 function onEmailChanged(event) {
   event = event || window.event;
