@@ -43,14 +43,14 @@ var endTime   = google.calendar.utils.getNow();
 var calendars = '';
 
 function onGetButton(event) {
-//  event = event || window.event;
-//  event.stopPropagation && event.stopPropagation();
-//  event.preventDefault  && event.preventDefault();
-//  event.cancelBubble = true;
-//  event.returnValue  = false;
+  event = event || window.event;
+  event.stopPropagation && event.stopPropagation();
+  event.preventDefault  && event.preventDefault();
+  event.cancelBubble = true;
+  event.returnValue  = false;
   calendars = "selected";
   onDatesChanged({startTime: startTime, endTime: endTime});
-//  prefs.set('calendars', calendars);
+  prefs.set('calendars', calendars);
 }
 
 function onEmailChanged(event) {
