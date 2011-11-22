@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs
-     title="自分の予定"
+     title="GCalユーティリティ"
      title_url="http://code.google.com/p/gcal-utility/"
      description="カレンダーで表示中の日付範囲に含まれるオーナーのイベントを表示します。"
      author="Hiromi Sunny"
-     scrolling="true"
+     scrolling="false"
      height="400">
     <Require feature="setprefs" />
     <Require feature="opensocial-0.8" />
@@ -17,7 +17,7 @@
   <Content type="html" view="home,profile,canvas">
     <![CDATA[
 <style type="text/css">
-  #contents { font-size: 12px; width:100%; height:250px; overflow: auto; }
+  #contents { font-size: 12px; width:100%; preferred_height:3000px; overflow: auto; }
   #form { padding: 4px 2px; }
   #form form { margin: 0px; padding: 0px; }
   #form input { font-size: inherit; width: 200px; }
