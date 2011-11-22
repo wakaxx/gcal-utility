@@ -38,9 +38,9 @@
 <!--    <button onclick="onGetPreButton();">昨日</button> -->
 <!--    <input type="button" value="今日" onclick="alert("未実装");" width="50px">-->
 <!--    <button onclick="onGetAfterButton();">明日</button> -->
-    <button onclick="alert("未実装でーす");">明日</button>
     </form>
   </div>
+  日付変更はGoogleカレンダーで操作してください。
   <div id="events"></div>
 </div>
 
