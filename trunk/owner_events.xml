@@ -34,9 +34,11 @@
 	  <input id="calendars" type="text" value="__UP_calendars__" />
     </form>
 -->    
+    <form name="operation">
 <!--    <button onclick="onGetPreButton();">昨日</button> -->
-    <button onclick="onGetButton();">今日</button>
+    <input type="button" value="今日" onclick="onGetButton()">
 <!--    <button onclick="onGetAfterButton();">明日</button> -->
+    </form>
   </div>
   <div id="events"></div>
 </div>
