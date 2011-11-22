@@ -70,7 +70,8 @@ function renderEvent(event) {
   var text = [], startDate = event.startTime, endDate = event.endTime;
   // text += date.month + '/' + date.date;
   if(!event.allDay)
-    text += ' ' + startDate.hour + ':' + startDate.minute + '-' + endDate.hour + ':' + endDate.minute;
+    text += ' ' + ("0" + startDate.hour).slice(-2) + ':' + ("0" + startDate.minute).slice(-2);
+    text += '-' + ("0" + endDate.hour).slice(-2) + ':' + ("0" + endDate.minute).slice(-2);
   text += ' ' + event.title;
   return '<div class="event">' + gadgets.util.escapeString(text) + '</div>';
 }
