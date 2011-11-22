@@ -6,7 +6,7 @@
      description="カレンダーで表示中の日付範囲に含まれるオーナーのイベントを表示します。"
      author="Hiromi Sunny"
      scrolling="true"
-     height="200">
+     height="400">
     <Require feature="setprefs" />
     <Require feature="opensocial-0.8" />
     <Require feature="google.calendar-0.5" />
