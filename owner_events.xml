@@ -48,7 +48,7 @@ function onGetButton(event) {
 //  event.preventDefault  && event.preventDefault();
 //  event.cancelBubble = true;
 //  event.returnValue  = false;
-//  calendars = "@viewer";
+  calendars = "selected";
   onDatesChanged({startTime: startTime, endTime: endTime});
 //  prefs.set('calendars', calendars);
 }
@@ -107,11 +107,9 @@ function setTime(date, hour, minute, second) {
 }
 
 function onDatesChanged(dates) {
-  alert(calendars);
-//  var ids   = calendars.replace(/\s/g, '').split(',');
+  var ids   = calendars.replace(/\s/g, '').split(',');
 //  var ids   = "@viewer";
 //  var ids   = "selected";
-  var ids = calendars;
 
   startTime = setTime(dates.startTime,  0,  0,  0);
   endTime   = setTime(dates.endTime,   23, 59, 59);
