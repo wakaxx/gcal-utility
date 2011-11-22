@@ -36,7 +36,7 @@
 -->    
     <form name="operation">
 <!--    <button onclick="onGetPreButton();">昨日</button> -->
-    <input type="button" value="今日" onclick="onGetButton()" width="100px">
+    <input type="button" value="今日" onclick="alert("未実装");" width="50px">
 <!--    <button onclick="onGetAfterButton();">明日</button> -->
     </form>
   </div>
