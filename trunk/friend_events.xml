@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs
+     title="友達のイベント"
+     title_url="http://webos-goodies.jp/"
+     description="カレンダーで表示中の日付範囲に含まれる他のユーザーのイベントを表示します。"
+     author="WebOS Goodies"
+     scrolling="true"
+     height="200">
+    <Require feature="setprefs" />
+    <Require feature="opensocial-0.8" />
+    <Require feature="google.calendar-0.5" />
+    <Require feature="google.calendar-0.5.read" />
+  </ModulePrefs>
+  <UserPref name="calendars" datatype="hidden" default_value="" />
+
+  <Content type="html" view="home,profile,canvas">
+    <![CDATA[
+<style type="text/css">
+  #contents { font-size: 12px; width:100%; height:200px; overflow: auto; }
+  #form { padding: 4px 2px; }
+  #form form { margin: 0px; padding: 0px; }
+  #form input { font-size: inherit; width: 140px; }
+  #events { padding: 2px; white-space: nowrap; }
+  .section { padding-bottom: 4px; }
+  .name { font-weight: bold; }
+</style>
+
+<div id="contents">
+  <div id="form">
+    <form onsubmit="onEmailChanged(event);">
+	  <input id="calendars" type="text" value="__UP_calendars__" />
+	</form>
+  </div>
+  <div id="events"></div>
+</div>
+
+<script type="text/javascript">
+var prefs     = new gadgets.Prefs();
+var startTime = google.calendar.utils.getNow();
+var endTime   = google.calendar.utils.getNow();
+var calendars = '';
+
+function onEmailChanged(event) {
+  event = event || window.event;
+  event.stopPropagation && event.stopPropagation();
+  event.preventDefault  && event.preventDefault();
+  event.cancelBubble = true;
+  event.returnValue  = false;
+  calendars = document.getElementById('calendars').value;
+  onDatesChanged({startTime: startTime, endTime: endTime});
+  prefs.set('calendars', calendars);
+}
+
+function renderEvent(event) {
+  var text = [], date = event.startTime;
+  text += date.month + '/' + date.date;
+  if(!event.allDay)
+    text += ' ' + date.hour + ':' + date.minute;
+  text += ' ' + event.title;
+  return '<div class="event">' + gadgets.util.escapeString(text) + '</div>';
+}
+
+function renderFriend(data) {
+  var name   = data.name || data.email;
+  var events = data.events;
+  var html   = [];
+  html.push('<div class="section">');
+  html.push('<div class="name">' + gadgets.util.escapeString(name) + '</div>');
+  for(var i = 0 ; i < events.length ; ++i) {
+    html.push(renderEvent(events[i]));
+  }
+  html.push('</div>');
+  return html.join("\n");
+}
+
+function setTime(date, hour, minute, second) {
+  return {
+    year: date.year, month: date.month, date: date.date,
+    hour: hour, minute: minute, second: second
+  };
+}
+
+function onDatesChanged(dates) {
+  var ids   = calendars.replace(/\s/g, '').split(',');
+  startTime = setTime(dates.startTime,  0,  0,  0);
+  endTime   = setTime(dates.endTime,   23, 59, 59);
+  if(ids.length > 0 && ids[0]) {
+    google.calendar.read.getEvents(function(response) {
+      var html = [];
+      for(var i = 0 ; i < response.length ; ++i) {
+        var data = response[i];
+        if(typeof data.error != 'undefined') {
+          alert(data.error);
+        } else if(data.events && data.events.length > 0) {
+          html.push(renderFriend(data));
+        }
+      }
+      document.getElementById('events').innerHTML = html.join("\n");
+    }, ids, startTime, endTime);
+  } else {
+    document.getElementById('events').innerHTML = '';
+  }
+}
+
+gadgets.util.registerOnLoadHandler(function() {
+  calendars = prefs.getString('calendars')
+  google.calendar.subscribeToDates(onDatesChanged);
+});
+</script>
+
+    ]]>
+  </Content>
+</Module>
