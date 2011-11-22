@@ -34,9 +34,9 @@
 	  <input id="calendars" type="text" value="__UP_calendars__" />
     </form>
 -->    
-    <button onclick="onGetButton("-1");">昨日</button>
-    <button onclick="onGetButton("0");">今日</button>
-    <button onclick="onGetButton("1");">明日</button>
+    <button onclick="onGetButton();">昨日</button>
+    <button onclick="onGetButton();">今日</button>
+    <button onclick="onGetButton();">明日</button>
   </div>
   <div id="events"></div>
 </div>
