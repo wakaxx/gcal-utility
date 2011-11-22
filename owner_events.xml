@@ -56,6 +56,9 @@ function onGetButton() {
 //  event.returnValue  = false;
 //  calendars = document.getElementById('calendars').value;;
 
+  startTime = google.calendar.utils.getNow();
+  endTime   = google.calendar.utils.getNow();
+
   onDatesChanged({startTime: startTime, endTime: endTime});
   prefs.set('calendars', calendars);
 }
