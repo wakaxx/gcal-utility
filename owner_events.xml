@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs
-     title="友達のイベント"
-     title_url="http://webos-goodies.jp/"
-     description="カレンダーで表示中の日付範囲に含まれる他のユーザーのイベントを表示します。"
-     author="WebOS Goodies"
+     title="自分の予定"
+     title_url="http://code.google.com/p/gcal-utility/"
+     description="カレンダーで表示中の日付範囲に含まれるオーナーのイベントを表示します。"
+     author="Hiromi Sunny"
      scrolling="true"
      height="200">
     <Require feature="setprefs" />
