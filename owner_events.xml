@@ -75,6 +75,8 @@ function renderEvent(event) {
     text += ' ' + ("0" + startDate.hour).slice(-2) + ':' + ("0" + startDate.minute).slice(-2);
     text += '-' + ("0" + endDate.hour).slice(-2) + ':' + ("0" + endDate.minute).slice(-2);
 
+    text += ' ' + event.title;
+
     var startMin = startDate.hour * 60 + startDate.minute;
     var endMin = endDate.hour * 60 + endDate.minute;
     var diffMin = endMin - startMin;
@@ -82,8 +84,8 @@ function renderEvent(event) {
     text += '(' + diffHour + ')';
   } else {
     text += "all day";
+    text += ' ' + event.title;
   }
-  text += ' ' + event.title;
   return '<div class="event">' + gadgets.util.escapeString(text) + '</div>';
 }
 
