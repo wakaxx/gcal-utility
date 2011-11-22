@@ -20,7 +20,7 @@
   #contents { font-size: 12px; width:100%; height:250px; overflow: auto; }
   #form { padding: 4px 2px; }
   #form form { margin: 0px; padding: 0px; }
-  #form input { font-size: inherit; width: 140px; }
+  #form input { font-size: inherit; width: 200px; }
   #events { padding: 2px; white-space: nowrap; }
   .section { padding-bottom: 4px; }
   .name { font-weight: bold; }
