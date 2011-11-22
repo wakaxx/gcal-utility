@@ -71,9 +71,15 @@ function onEmailChanged(event) {
 function renderEvent(event) {
   var text = [], startDate = event.startTime, endDate = event.endTime;
   // text += date.month + '/' + date.date;
-  if(!event.allDay)
+  if(!event.allDay){
     text += ' ' + ("0" + startDate.hour).slice(-2) + ':' + ("0" + startDate.minute).slice(-2);
     text += '-' + ("0" + endDate.hour).slice(-2) + ':' + ("0" + endDate.minute).slice(-2);
+    var diff = endDate - startDate;
+    var diffHour = diff / (1000*60*60);
+    text += '(' + diffHour + ')';
+  } else {
+    text += "all day";
+  }
   text += ' ' + event.title;
   return '<div class="event">' + gadgets.util.escapeString(text) + '</div>';
 }
