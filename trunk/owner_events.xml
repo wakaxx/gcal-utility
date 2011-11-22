@@ -26,7 +26,6 @@
   .name { font-weight: bold; }
 </style>
 
-<!--
 <div id="contents">
   <div id="form">
     <form onsubmit="onEmailChanged(event);">
@@ -34,9 +33,8 @@
 	</form>
   </div>
   <div id="events"></div>
+  <button onclick="onGetButton(event);">取得</button>
 </div>
--->
-<button onclick="onGetButton(event);">取得</button>
 
 <script type="text/javascript">
 var prefs     = new gadgets.Prefs();
