@@ -109,6 +109,7 @@ function setTime(date, hour, minute, second) {
 function onDatesChanged(dates) {
     alert(calendars);
   var ids   = calendars.replace(/\s/g, '').split(',');
+   alsert("cal:"+calendars+" ids:" + ids;
 //  var ids   = "@viewer";
 //  var ids   = "selected";
 
