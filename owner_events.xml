@@ -28,10 +28,12 @@
 
 <div id="contents">
   <div id="form">
+<!--
     <form onsubmit="onEmailChanged(event);">
 	  <input id="calendars" type="text" value="__UP_calendars__" />
-	  <button onclick="onGetButton();">取得</button>
     </form>
+-->
+    <button onclick="onGetButton();">取得</button>
   </div>
   <div id="events"></div>
 </div>
