@@ -26,7 +26,7 @@
   .name { font-weight: bold; }
 </style>
 
-<script type="text/javascript" src="jkl-calendar.js" charset="Shift_JIS"></script>
+<script type="text/javascript" src="http://gcal-utility.googlecode.com/svn/trunk/jkl-calendar.js" charset="Shift_JIS"></script>
 <script><--
     var cal1 = new JKL.Calendar("calid","formid","colname");
 //--></script>
