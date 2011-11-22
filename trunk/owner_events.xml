@@ -26,6 +26,11 @@
   .name { font-weight: bold; }
 </style>
 
+<script type="text/javascript" src="jkl-calendar.js" charset="Shift_JIS"></script>
+<script><--
+    var cal1 = new JKL.Calendar("calid","formid","colname");
+//--></script>
+
 <div id="contents">
   <div id="form">
 <!--
@@ -33,10 +38,17 @@
 	  <input id="calendars" type="text" value="__UP_calendars__" />
     </form>
 -->
+    <form id="formid" action="">
+        <input type="text" name="colname" onClick="cal1.write();" 
+            onChange="cal1.getFormValue(); cal1.hide();"><br>
+        <div id="calid"></div>
+    </form>
+    
     <button onclick="onGetButton();">取得</button>
   </div>
   <div id="events"></div>
 </div>
+
 
 <script type="text/javascript">
 var prefs     = new gadgets.Prefs();
@@ -115,7 +127,8 @@ function onDatesChanged(dates) {
   var ids   = "selected";
 
   startTime = setTime(dates.startTime,  0,  0,  0);
-  endTime   = setTime(dates.endTime,   23, 59, 59);
+//  endTime   = setTime(dates.endTime,   23, 59, 59);
+  endTime   = setTime(dates.startTime,   23, 59, 59);
   if(ids.length > 0 && ids[0]) {
     google.calendar.read.getEvents(function(response) {
       var html = [];
