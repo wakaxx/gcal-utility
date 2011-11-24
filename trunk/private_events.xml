@@ -8,6 +8,7 @@
      scrolling="true"
      height="600">
     <Require feature="setprefs" />
+    <Require feature="dynamic-height"/>    
     <Require feature="opensocial-0.8" />
     <Require feature="google.calendar-0.5" />
     <Require feature="google.calendar-0.5.read" />
@@ -147,9 +148,13 @@ function onDatesChanged(dates) {
         }
       }
       document.getElementById('events').innerHTML = html.join("\n");
+      // Tells gadget to resize itself
+      gadgets.window.adjustHeight();
     }, ids, startTime, endTime);
   } else {
     document.getElementById('events').innerHTML = '';
+    // Tells gadget to resize itself
+    gadgets.window.adjustHeight();
   }
 }
 
