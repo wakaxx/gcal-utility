@@ -18,7 +18,7 @@
   <Content type="html" view="home,profile,canvas">
     <![CDATA[
 <style type="text/css">
-  #contents { font-size: 12px; width:100%; height:300px; overflow: auto; }
+  #contents { font-size: 12px; width:100%; height:600px; overflow: auto; }
   #form { padding: 4px 2px; }
   #form form { margin: 0px; padding: 0px; }
   #form input { font-size: inherit; width: 200px; }
@@ -30,7 +30,7 @@
 
 <div id="contents">
   <div id="form">
-    <p>カレンダーID(xxx@gmail.com)</p>
+    <p>カレンダーID</p>
     <p>(カンマで複数可)</p>
     <form onsubmit="onEmailChanged(event);">
 	  <input id="calendars" type="text" value="__UP_calendars__" />
