@@ -30,8 +30,10 @@
 
 <div id="contents">
   <div id="form">
-    <p>カレンダーID</p>
-    <p>(カンマで複数可)</p>
+    <p>
+      カレンダーID<br/>
+      (カンマで複数可)
+    </p>
     <form onsubmit="onEmailChanged(event);">
 	  <input id="calendars" type="text" value="__UP_calendars__" />
     </form>
