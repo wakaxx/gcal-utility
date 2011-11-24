@@ -133,7 +133,7 @@ function setTime(date, hour, minute, second) {
 
 function onDatesChanged(dates) {
 //  var ids   = calendars.replace(/\s/g, '').split(',');
-  var ids   = "@viewer";
+  var ids   = ["@viewer"];
 //  var ids   = "private";
 
   startTime = setTime(dates.startTime,  0,  0,  0);
