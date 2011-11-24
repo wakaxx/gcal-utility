@@ -3,7 +3,7 @@
   <ModulePrefs
      title="日報支援ツール(指定版)"
      title_url="http://code.google.com/p/gcal-utility/"
-     description="カレンダーで表示中の日付範囲に含まれる指定したカレンダーのイベントのみを表示します。"
+     description="指定したカレンダーのイベントを表示します。(複数選択可能)"
      author="Hiromi Sunny"
      scrolling="true"
      height="600">
