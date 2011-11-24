@@ -43,7 +43,8 @@
 <!--    <button onclick="onGetAfterButton();">明日</button> -->
     </form>
   </div>
-  日付変更はGoogleカレンダーで操作してください。
+  Googleカレンダーで表示させたい日のみを選択してください。<br/>
+  週表示、月表示だと範囲の先頭日が表示されます。
   <div id="events"></div>
 </div>
 
