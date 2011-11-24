@@ -29,11 +29,9 @@
 
 <div id="contents">
   <div id="form">
-<!--
     <form onsubmit="onEmailChanged(event);">
 	  <input id="calendars" type="text" value="__UP_calendars__" />
     </form>
--->    
     <form name="operation">
 <!--    <button onclick="onGetPreButton();">昨日</button> -->
 <!--    <input type="button" value="今日" onclick="alert("未実装");" width="50px">-->
@@ -132,8 +130,8 @@ function setTime(date, hour, minute, second) {
 }
 
 function onDatesChanged(dates) {
-//  var ids   = calendars.replace(/\s/g, '').split(',');
-  var ids   = ["@viewer"];
+  var ids   = calendars.replace(/\s/g, '').split(',');
+//  var ids   = ["@viewer"];
 //  var ids   = "private";
 
   startTime = setTime(dates.startTime,  0,  0,  0);
