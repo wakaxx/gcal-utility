@@ -45,6 +45,7 @@
   </div>
   Googleカレンダーで表示させたい日のみを選択してください。<br/>
   週表示、月表示だと範囲の先頭日が表示されます。
+  <a href="http://vega/kymsys/" target="_blank">業務システムを開く</a><br>
   <div id="events"></div>
 </div>
 
