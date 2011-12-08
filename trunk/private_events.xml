@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs
-     title="日報支援ツール(指定版)"
+     title="日報支援ツール"
      title_url="http://code.google.com/p/gcal-utility/"
      description="指定したカレンダーのイベントを表示します。(複数選択可能)"
      author="Hiromi Sunny"
@@ -113,7 +113,7 @@ function renderFriend(data) {
     html.push(renderEvent(events[i]));
   }
   html.push('</div>');
-  return html.join("\n");
+  return html.join("\n\n");
 }
 
 function renderViewer(data) {
