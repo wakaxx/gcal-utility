@@ -126,7 +126,6 @@ function renderViewer(data) {
     html.push(renderEvent(events[i]));
   }
   html.push('</div>');
-  html.push('<br>');
   return html.join("\n");
 }
 
@@ -154,6 +153,7 @@ function onDatesChanged(dates) {
           html.push(renderViewer(data));
         }
       }
+      html.push('<div/>最後の行</div>');
       document.getElementById('events').innerHTML = html.join("\n");
       // Tells gadget to resize itself
       gadgets.window.adjustHeight();
