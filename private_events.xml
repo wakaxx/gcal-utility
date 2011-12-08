@@ -100,7 +100,7 @@ function renderEvent(event) {
     text += "all day";
     text += ' ' + event.title;
   }
-  return '<div class="event">' + gadgets.util.escapeString(text) + '</div>' + '<br/>';
+  return '<div class="event">' + gadgets.util.escapeString(text) + '</div>';
 }
 
 function renderFriend(data) {
@@ -126,7 +126,8 @@ function renderViewer(data) {
     html.push(renderEvent(events[i]));
   }
   html.push('</div>');
-  return html.join("\n\n");
+  html.push('<br>');
+  return html.join("\n");
 }
 
 function setTime(date, hour, minute, second) {
