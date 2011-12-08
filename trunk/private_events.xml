@@ -126,7 +126,7 @@ function renderViewer(data) {
     html.push(renderEvent(events[i]));
   }
   html.push('</div>');
-  return html.join("\n");
+  return html.join("\n\n");
 }
 
 function setTime(date, hour, minute, second) {
