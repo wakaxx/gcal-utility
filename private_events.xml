@@ -153,7 +153,7 @@ function onDatesChanged(dates) {
           html.push(renderViewer(data));
         }
       }
-      html.push('<div/> </div>');
+      html.push('<div/>おわり</div>');
       document.getElementById('events').innerHTML = html.join("\n");
       // Tells gadget to resize itself
       gadgets.window.adjustHeight();
