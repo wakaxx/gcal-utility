@@ -46,6 +46,7 @@
   Googleカレンダーで表示させたい日のみを選択してください。<br/>
   週表示、月表示だと範囲の先頭日が表示されます。<br/>
   <a href="http://vega/kymsys/" target="_blank">業務システムを開く</a><br>
+  <a href="http://altair:4025/" target="_blank">Redmineを開く</a><br>
   <div id="events"></div>
 </div>
 
